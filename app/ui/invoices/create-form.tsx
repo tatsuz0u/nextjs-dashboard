@@ -10,11 +10,12 @@ import {
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
+import { State } from '@/app/lib/actions';
 import { createInvoice } from '@/app/lib/actions';
 import { CustomerField } from '@/app/lib/definitions';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
-  const initialState = { message: null, errors: {} };
+  const initialState: State = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createInvoice, initialState);
 
   return (
